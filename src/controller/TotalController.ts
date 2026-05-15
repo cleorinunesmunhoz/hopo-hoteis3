@@ -3,6 +3,7 @@ import Client from "../models/Client";
 import HomeScreen from "../view/HomeScreen"
 import { Room } from "../models/Room";
 import Database from "../database/Database";
+import { RoomType } from "../enum/RoomType";
 
 export default class TotalController {
     private database : Database;
@@ -20,6 +21,5 @@ public newClient(personName:string, cpf:number):void {
     this.database.client.push(cliente1);
     console.log("nome "+ personName + " CPF: " + cpf + " cliente cadastrado");
 }
-
 }
 

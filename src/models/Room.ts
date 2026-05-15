@@ -1,26 +1,37 @@
 import { RoomType } from "../enum/RoomType";
 
 export class Room {
+    private numberRoom: number;
     private type: RoomType;
-    private value: number;
+    private value: number=0;
 
-    constructor(type:RoomType, value:number) {
+    constructor(numberRoom:number,type:RoomType) {
+        this.numberRoom=numberRoom;
         this.type = type;
-        this.value = value;
+
+        if(type ===RoomType.CASAL) {
+            this.value = 150;
+        }
+        if(type ===RoomType.SOLTEIRO) {
+            this.value = 100;
+        }
+        if(type === RoomType.LUXO) {
+            this.value = 200;
+        }
     }
+    public get getNumber(): number {
+        return this.numberRoom;
+    }
+
     public get getType():RoomType {
         return this.type;
+        
     }
     public set setType(newType:  RoomType) {
         this.type = newType;
     }
-    public get getValue():number {
-        return this.value;
-    }
-    public set setDays(newValue: number){
-        this.value = newValue;
-    }
     public showData(): void {
+        console.log(this.numberRoom);
         console.log(this.type);
         console.log(this.value);
     }
