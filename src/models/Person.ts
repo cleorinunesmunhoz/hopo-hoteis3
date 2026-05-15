@@ -1,14 +1,14 @@
 export default class Person {
 
-    private name : string;
+    private namePerson : string;
 
     constructor(name:string) {
-        this.name = name;
+        this.namePerson = name;
     }
-    public get getName(): string {
-        return this.name;
+    public get getNamePerson(): string {
+        return this.namePerson;
     }
-    public set setName(newName:string) {
-        this.name = newName;
+    public set setNamePerson(newName:string) {
+        this.namePerson = newName;
     }
 }
