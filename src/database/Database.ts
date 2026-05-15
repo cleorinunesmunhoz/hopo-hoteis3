@@ -10,7 +10,9 @@ export default class Database {
     public client: Client[] = [];
     public person: Person[] = [];
     public room: Room[] = [];
-
+    
+//aqui estou criando para ficar valor certo da quantidade de quartos, ficara fixo 20 quartos
+//de casal, 20 de solteiro e 10 luxo.
     constructor() {
         for(let i =1; i <=20; i++) {
             this.room.push(

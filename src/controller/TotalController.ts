@@ -21,5 +21,6 @@ public newClient(personName:string, cpf:number):void {
     this.database.client.push(cliente1);
     console.log("nome "+ personName + " CPF: " + cpf + " cliente cadastrado");
 }
+
 }
 

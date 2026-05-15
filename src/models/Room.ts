@@ -4,7 +4,9 @@ export class Room {
     private numberRoom: number;
     private type: RoomType;
     private value: number=0;
-
+//aqui no construtor ja estou deixando definido os valores com if(decisao simples),
+//  se escolher quarto de casal
+//é 150 o valor da diaria, solteiro 100 e luxo 200.
     constructor(numberRoom:number,type:RoomType) {
         this.numberRoom=numberRoom;
         this.type = type;
@@ -29,6 +31,9 @@ export class Room {
     }
     public set setType(newType:  RoomType) {
         this.type = newType;
+    } 
+    public get getValue(): number {
+        return this.value;
     }
     public showData(): void {
         console.log(this.numberRoom);
