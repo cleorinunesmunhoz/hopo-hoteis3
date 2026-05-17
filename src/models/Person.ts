@@ -2,8 +2,8 @@ export default class Person {
 
     private namePerson : string;
 
-    constructor(name:string) {
-        this.namePerson = name;
+    constructor(namePerson:string) {
+        this.namePerson = namePerson;
     }
     public get getNamePerson(): string {
         return this.namePerson;

@@ -3,12 +3,14 @@ import Person from "../models/Person";
 import Client from "../models/Client";
 import { Room } from "../models/Room";
 import { RoomType } from "../enum/RoomType";
+import { Reservation } from "../models/Reservation";
 
 
 export default class Database {
 
     public client: Client[] = [];
     public person: Person[] = [];
+    public reservation:Reservation[] = [];
     public room: Room[] = [];
     
 //aqui estou criando para ficar valor certo da quantidade de quartos, ficara fixo 20 quartos

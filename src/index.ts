@@ -14,11 +14,25 @@ import { Reservation } from "./models/Reservation";
 // controller.newPersonName("cleo");
 //controller.newClient("analice",+ " 047122");
 
+// const client = new Client("Analice", 12345);
+
+// const room = new Room(1, RoomType.CASAL);
+
+// const reservation = new Reservation(client, room, 2);
+
+// reservation.valueDays();
+
+// reservation.showData();
+
 const client = new Client("Analice", 12345);
 
 const room = new Room(1, RoomType.CASAL);
 
-const reservation = new Reservation(client, room, 2);
+const reservation = new Reservation(
+    client,
+    room,
+    2
+);
 
 reservation.valueDays();
 
