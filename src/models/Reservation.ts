@@ -1,7 +1,5 @@
 import { Room } from "./Room";
-import TotalController from "../controller/TotalController";
 import Client from "./Client";
-import { RoomType } from "../enum/RoomType";
 
 export class Reservation {
     private client: Client;

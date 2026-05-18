@@ -1,6 +1,8 @@
-export default class Person {
+export default abstract class Person {
+    //essa classe é abstrata porque ninguem cria pessoa, mas pessoa existe
+    //cria-se cliente que é uma pessoa, ela é uma estrutura base!
 
-    private namePerson : string;
+    protected namePerson : string;
 
     constructor(namePerson:string) {
         this.namePerson = namePerson;
