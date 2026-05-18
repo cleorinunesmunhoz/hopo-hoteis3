@@ -11,4 +11,8 @@ export default class Person {
     public set setNamePerson(newName:string) {
         this.namePerson = newName;
     }
+    //aqui sera herdade para a classe client gerando a sobrescrita
+    public showData(): void {
+        console.log("nome "+ this.getNamePerson);
+    }
 }
