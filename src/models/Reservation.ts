@@ -27,7 +27,8 @@ export class Reservation {
     }
     public get getTotalValue(): number {
         return this.totalValue;
-    }
+    } 
+    //metodo que faz a multiplicacao de dias vezes valor
     public valueDays(): void {
         this.totalValue = this.room.getValue * this.days;
     }
@@ -47,4 +48,13 @@ export class Reservation {
         console.log("Valor total:");
         console.log(this.totalValue);
     }
+
+    public setPayer(payer: Client): void;
+    public setPayer(payer: number): void;
+    public setPayer(payer:Client | number) {
+
+    //logica caso client ou number sobrecarga
+
+    }
+
 } 

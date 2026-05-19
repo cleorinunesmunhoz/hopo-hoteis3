@@ -1,8 +1,13 @@
 import Person from "./Person";
 
 export default class Client extends Person {
+    metodoParaClasseFilha(): string {
+       return ""
+    }
 
-    private cpf: number;
+    public cpf: number = 0;
+
+
 
     constructor(namePerson:string,cpf:number) {
         super(namePerson);

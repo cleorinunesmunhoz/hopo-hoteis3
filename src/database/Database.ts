@@ -32,5 +32,8 @@ export default class Database {
             );
         }
         }
+
+        // fazer um método que receba qualquer objeto que implemente o método (nome do metodo, é getNumber():number da interface IElement para que tanto o nome do cliente quanto o numero elçe
+        //retorna o nome do metodo e da classe
     }
     

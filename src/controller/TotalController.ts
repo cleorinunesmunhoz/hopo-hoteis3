@@ -1,9 +1,6 @@
 import { Room } from './../models/Room';
-import Person from "../models/Person";
 import Client from "../models/Client";
-import HomeScreen from "../view/HomeScreen"
 import Database from "../database/Database";
-import { RoomType } from "../enum/RoomType";
 import { Reservation } from '../models/Reservation';
 
 export default class TotalController {
@@ -13,7 +10,7 @@ constructor() {
     this.database = new Database();
 }
 public newPersonName(namePerson:string): void {
-    const namePerson1 = new Person(namePerson);
+    const namePerson1 = new Client(namePerson, 0);
     this.database.person.push(namePerson1);
     console.log(namePerson + " cadastrada!")
 }
@@ -48,6 +45,7 @@ public findClient(cpf:number): Client | undefined {
 //metodo para buscar quartos
 public findRoom(numberRoom:number ): Room | undefined {
     return this.database.room.find(room=> room.getNumber === numberRoom);
+    // fazer metodos usando for no database
 }
 }
 
