@@ -1,17 +1,20 @@
 import { Room } from "./Room";
 import Client from "./Client";
+import Database from "../database/Database";
 
 export class Reservation {
     private client: Client;
     private room : Room;
     private days : number;
     private totalValue:number = 0;
+    private database:Database;
 //aqui esta a injecao de dependencia, onde estamos usandoduas classes
 //prontas e utilizando juntas, onde as informaçoes se encontram.
     constructor(client:Client, room:Room, days:number) {
         this.client = client;
         this.room = room;
         this.days= days;
+        this.database=new Database();
     }
     public get getClient(): Client {
         return this.client;
@@ -54,7 +57,29 @@ export class Reservation {
     public setPayer(payer:Client | number) {
 
     //logica caso client ou number sobrecarga
+    let client: Client;
+    if (typeof payer === "number"){
 
+        //buscando client por cpf
+        client = this.database.client.find((c)=> {
+            if(c.cpf===payer){
+                return c;
+            }
+        })
+
+        if (!client){
+            return ("cliente nao encontrado");
+        } 
+    } 
+    else {
+            client=payer
+        
     }
 
+    return(`o pagador é ${client.getNamePerson}`)
+
+
+
+
+    }
 } 

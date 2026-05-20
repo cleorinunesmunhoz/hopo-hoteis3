@@ -38,14 +38,14 @@ public newReservation(client:Client,roon:Room,days:number): void {
 public listReservations(): void {
     this.database.reservation.forEach(reservation => reservation.showData());
 }
-//metodopara buscar cliente no array pelo cpf
-public findClient(cpf:number): Client | undefined {
-    return this.database.client.find(client =>client.getCpf === cpf);
-}
-//metodo para buscar quartos
 public findRoom(numberRoom:number ): Room | undefined {
     return this.database.room.find(room=> room.getNumber === numberRoom);
-    // fazer metodos usando for no database
 }
+ //metodopara buscar cliente no array pelo cpf
+ public findClient(cpf:number): Client | undefined {
+    return this.database.client.find(client =>client.getCpf === cpf);
+}
+
+
 }
 

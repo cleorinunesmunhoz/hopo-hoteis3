@@ -1,5 +1,4 @@
 import Person from "./Person";
-
 export default class Client extends Person {
     metodoParaClasseFilha(): string {
        return ""
@@ -29,4 +28,6 @@ export default class Client extends Person {
         console.log("nome "+ this.getNamePerson);
         console.log("CPF " + this.getCpf);
     }
-}
+
+   
+} 

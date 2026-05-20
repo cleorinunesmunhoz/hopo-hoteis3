@@ -40,4 +40,6 @@ export class Room {
         console.log(this.type);
         console.log(this.value);
     }
+    //metodo para buscar quartos
+
 }
