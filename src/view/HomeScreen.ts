@@ -1,15 +1,18 @@
 
 const prompt = require("prompt-sync")();
 import TotalController from "../controller/TotalController";
+import Service from "../service/service";
 
 export default class HomeScreen {
     private controller: TotalController;
+    private service:Service;
 
     //aqui no homesCreen tambem podemos dizer que é uma injecao de dependencia, pois recebe 
     //o controller tudo pronto para exibir!
 
-    constructor(controller: TotalController) {
+    constructor(controller: TotalController, service:Service) {
         this.controller = controller;
+        this.service = service;
     }
     public initialScreen() {
         let option: number=0;
@@ -35,8 +38,8 @@ export default class HomeScreen {
             const roomNumber = Number (prompt("Digite o numero do quarto:"));
             const days =Number (prompt("Digite quantos dias:"));
             
-            const client = this.controller.findClient(cpfReservation);
-            const room = this.controller.findRoom(roomNumber);
+            const client = this.service.findClient(cpfReservation);
+            const room = this.service.findRoom(roomNumber);
 
             if(client && room) {
                 this.controller.newReservation(client,room,days)
@@ -47,11 +50,11 @@ export default class HomeScreen {
             break;
 
             case 3:
-                this.controller.listClients();
-                this.controller.listReservations();
+                this.service.listClients();
+                this.service.listReservations();
                 break;
             case 4:
-                this.controller.listRoom();
+                this.service.listRoom();
 
             case 5:
                     console.log("Sistema encerrado");

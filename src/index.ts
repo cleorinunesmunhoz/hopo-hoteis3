@@ -42,11 +42,9 @@ import HomeScreen from "./view/HomeScreen";
 
 const controller = new TotalController();
 
-const home = new HomeScreen(controller);
 
-home.initialScreen();
 
- controller.listRoom();
+
 
 // controller.newClient("Analice", 12345);
 

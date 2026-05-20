@@ -1,10 +1,14 @@
 import Person from "./Person";
-export default class Client extends Person {
+import Listable from "../interface/Listable";
+
+
+export default class Client extends Person implements Listable {
     metodoParaClasseFilha(): string {
        return ""
     }
 
     public cpf: number = 0;
+    
 
 
 
@@ -12,12 +16,14 @@ export default class Client extends Person {
         super(namePerson);
         this.cpf = cpf;
     }
+    
     public get getCpf(): number {
         return this.cpf;
     }
     public set setCpf(NewCpf: number) {
         this.cpf = NewCpf;
     }
+   
     //aqui implementei a SOBRESCRITA que  é implementar o mesmo método da classe pai na classe filha usando override
     //A sobrescrita permite:
     //manter o mesmo nome do método

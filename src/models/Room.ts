@@ -1,14 +1,14 @@
 import { RoomType } from "../enum/RoomType";
+import Listable from "../interface/Listable";
 
-export class Room {
+export class Room implements Listable{
+    
     private numberRoom: number;
     private type: RoomType;
-    private value: number=0;
-//aqui no construtor ja estou deixando definido os valores com if(decisao simples),
-//  se escolher quarto de casal
-//é 150 o valor da diaria, solteiro 100 e luxo 200.
-    constructor(numberRoom:number,type:RoomType) {
-        this.numberRoom=numberRoom;
+    private value: number = 0;
+
+    constructor(numberRoom: number, type: RoomType) {
+        this.numberRoom = numberRoom;
         this.type = type;
 
         if(type ===RoomType.CASAL) {
@@ -21,6 +21,7 @@ export class Room {
             this.value = 200;
         }
     }
+   
     public get getNumber(): number {
         return this.numberRoom;
     }
@@ -35,6 +36,7 @@ export class Room {
     public get getValue(): number {
         return this.value;
     }
+   
     public showData(): void {
         console.log(this.numberRoom);
         console.log(this.type);
